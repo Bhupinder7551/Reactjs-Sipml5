@@ -1,0 +1,187 @@
+body {
+  //  background-image: url(./images/bg_2.jpg);
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.9),
+      rgba(2, 2, 2, 0.8)
+    ),
+    url("../images/bg_3.jpg");
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: aliceblue !important;
+  .navbar {
+    background-color: #141414 !important;
+  }
+}
+.container_ {
+  padding: 3rem;
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    letter-spacing: 13px;
+    margin-bottom: 3rem;
+  }
+  h5 {
+    font-family: "Square Peg", cursive;
+  }
+  .textarea_reg {
+    width: 100%;
+  }
+  .registerarea {
+    display: flex;
+
+    .left_regarea {
+      width: 55%;
+    }
+    .right_regarea {
+      width: 40%;
+    }
+    .regbtns {
+      margin: 0.3rem;
+    }
+    .registerform {
+      label {
+        width: 30%;
+      }
+      input {
+        width: 70%;
+        background-color: rgb(212, 220, 227);
+      }
+    }
+  }
+  //call area
+  .call_area {
+    width: 100%;
+    .call_btns {
+      margin: 10px 0px 20px 0px;
+    }
+  }
+  // video area
+  .videoarea {
+    display: flex;
+
+    .video_left {
+      width: 50%;
+      height: 25rem;
+      margin-right: 1rem;
+      video {
+        object-fit: cover;
+        height: 90%;
+        width: 100%;
+      }
+    }
+    .video_right {
+      width: 50%;
+      height: 25rem;
+
+      video {
+        object-fit: cover;
+        height: 90%;
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* //tablet */
+@media screen and (max-width: 992px) {
+  .container_ {
+    h2 {
+      font-size: 2rem;
+      letter-spacing: 0px;
+      margin-bottom: 2rem;
+    }
+  }
+}
+// phone
+@media screen and (max-width: 600px) {
+  .container_ {
+    h2 {
+      font-size: 1.5rem;
+      letter-spacing: 0px;
+      margin-bottom: 2rem;
+    }
+    .registerarea {
+      display: block;
+      .left_regarea {
+        width: 100%;
+      }
+      .right_regarea {
+        width: 100%;
+        img {
+          margin-left: -3rem;
+        }
+      }
+
+      .registerform {
+        width: 100%;
+        label {
+          font-size: 0.8rem;
+        }
+        input {
+          font-size: 0.8rem;
+        }
+      }
+      .regbtns {
+        input {
+          font-size: 0.7rem;
+        }
+      }
+    }
+
+    .call_area {
+      width: 100%;
+    }
+
+    // video area
+    .videoarea {
+      background-color: aliceblue;
+      height: 22rem;
+      width: 80vw !important;
+      position: relative;
+      display: block;
+      .video_left {
+        position: absolute;
+        h5 {
+          display: none;
+        }
+        z-index: 1;
+        bottom: 0;
+        right: 0;
+        width: 40%;
+        height: 9rem;
+        video::-webkit-media-controls-panel {
+          display: none !important;
+        }
+        video {
+          border: 1px solid rgb(0, 0, 0);
+        }
+      }
+      .video_right {
+        position: absolute;
+        width: 100%;
+        top:0;
+      
+
+        h5 {
+          display: none;
+        }
+        video::-webkit-media-controls-panel {
+          display: none !important;
+        }
+        video {
+          border: 2px solid black;
+        }
+      }
+    }
+    .call-options {
+      z-index: 1000000;
+    }
+  }
+}

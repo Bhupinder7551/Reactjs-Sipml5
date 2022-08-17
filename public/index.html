@@ -24,11 +24,25 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <title>React App</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <audio id="audio_remote" autoplay="autoplay"></audio>
+<audio id="ringtone" loop src="./../assets/sounds/ringtone.wav"> </audio>
+<audio id="ringbacktone" loop src="./../assets/sounds/ringbacktone.wav"> </audio>
+<audio id="dtmfTone" src="./../assets/sounds/dtmf.wav"> </audio>
+<svg class="voicecall" xmlns="http://www.w3.org/2000/svg" version="1.1" id="microphone" data-container-transform="translate(3)" viewBox="0 0 16 20" x="0px" y="0px"><path d="M4.5 0c-1.4 0-2.5 1.1-2.5 2.5v5c0 1.4 1.1 2.5 2.5 2.5s2.5-1.1 2.5-2.5v-5c0-1.4-1.1-2.5-2.5-2.5zm-4.125 6.188a.5.5 0 0 0-.375.5v.813c0 2.302 1.763 4.184 4 4.438v3.063h-2c-.6 0-1 .4-1 1h7c0-.6-.4-1-1-1h-2v-3.063c2.237-.254 4-2.136 4-4.438v-.813a.5.5 0 1 0-1 0v.813c0 1.927-1.573 3.5-3.5 3.5s-3.5-1.573-3.5-3.5v-.813a.5.5 0 0 0-.563-.5.5.5 0 0 0-.063 0z" transform="translate(3)"/></svg>
+<input type="button" class="btn btn-success" id="btnRegister" value="LogIn" (click)='sipRegister();' />
+<input type="button" class="btn btn-success" id="sipCall2" value="Audio Call" (click)="sipCall('call-audio')" />
+<input type="button" class="btn btn-success" id="btnCall" value="Answer" (click)="sipCall('call-audio')" />
+<input type="button" class="btn btn-success" id="sipHangUp" value="Reject" (click)="sipHangUp()" />
+<input type="button" class="btn btn-success" id="btnHangup" value="Hang Up" (click)="sipHangUp()" />
+<input type="button" class="btn btn-danger" id="btnUnRegister" value="LogOut" (click)='sipUnRegister();' />
+<input type="button" class="btn btn-danger" id="btnTransfer" value="Transfer" (click)='sipTransfer();' />
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -39,5 +53,9 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  
+    <script src="./javascript/SIPml-api.js"></script>
+    <script src="./javascript/server.js"></script>
   </body>
 </html>
